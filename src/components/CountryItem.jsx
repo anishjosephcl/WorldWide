@@ -1,4 +1,6 @@
 import styles from "./CountryItem.module.css";
+import React from "react";
+import PropTypes from 'prop-types';
 
 function CountryItem({ country }) {
   return (
@@ -8,5 +10,7 @@ function CountryItem({ country }) {
     </li>
   );
 }
-
+CountryItem.propTypes = {
+  country:PropTypes.object
+};
 export default CountryItem;

@@ -1,4 +1,6 @@
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import React from "react";
+import PropTypes from 'prop-types';
 import {
   MapContainer,
   TileLayer,
@@ -89,5 +91,7 @@ function DetectClick() {
     click: (e) => navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
   });
 }
-
+ChangeCenter.propTypes = {
+  position:PropTypes.string
+};
 export default Map;

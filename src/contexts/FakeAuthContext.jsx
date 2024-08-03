@@ -1,5 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
-
+import PropTypes from 'prop-types';
+import React from "react";
 const AuthContext = createContext();
 
 const initialState = {
@@ -53,5 +54,7 @@ function useAuth() {
     throw new Error("AuthContext was used outside AuthProvider");
   return context;
 }
-
+AuthProvider.propTypes = {
+  children: PropTypes.node
+};
 export { AuthProvider, useAuth };

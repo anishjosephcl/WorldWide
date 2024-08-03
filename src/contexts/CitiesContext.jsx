@@ -5,7 +5,8 @@ import {
   useReducer,
   useCallback,
 } from "react";
-
+import PropTypes from 'prop-types';
+import React from "react";
 const BASE_URL = "http://localhost:9000";
 
 const CitiesContext = createContext();
@@ -166,5 +167,7 @@ function useCities() {
     throw new Error("CitiesContext was used outside the CitiesProvider");
   return context;
 }
-
+CitiesProvider.propTypes = {
+  children: PropTypes.node
+};
 export { CitiesProvider, useCities };
